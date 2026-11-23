@@ -1,0 +1,31 @@
+{
+  "realm": "dispatch",
+  "enabled": true,
+  "displayName": "Dispatch local identity broker",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "clients": [
+    {
+      "clientId": "dispatch-web",
+      "name": "Dispatch Web",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "local-dev-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/api/auth/callback/enterprise-sso"],
+      "webOrigins": ["http://localhost:3000"],
+      "protocol": "openid-connect",
+      "defaultClientScopes": ["web-origins", "acr", "roles", "profile", "email", "groups"]
+    }
+  ],
+  "groups": [
+    { "name": "dispatch-owners" },
+    { "name": "dispatch-admins" },
+    { "name": "pmo-leads" },
+    { "name": "project-managers" },
+    { "name": "dispatch-contributors" },
+    { "name": "dispatch-viewers" },
+    { "name": "internal-audit" }
+  ]
+}
